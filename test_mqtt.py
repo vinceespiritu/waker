@@ -13,14 +13,14 @@ def on_press(key):
 	try:
 		k = key.char
 	except:
-		k=key.name
+		k = key.name
 
 	if k == "a":
 		client.publish("waker/sleep_status","SLEEP_ON")
 		print("SLEEPING")
 	
 	elif k == "i":
-		client.publish("waker/sleep_status","SLEEP_ON")
+		client.publish("waker/sleep_status","SLEEP_OFF")
 		print("AWAKE")
 
 	elif k =="q":

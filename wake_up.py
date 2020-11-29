@@ -1,24 +1,24 @@
 import paho.mqtt.client as mqtt
-import pygame
+from pygame import mixer
 import time
 
 audio_filename = "wakemeup.mp3"
-pygame.mixer.init()
-pygame.mixer.music.load("wakemeup.mp3")
-
 
 # Wakeup function
 def status_callback(client, userdata, message):
 
-	
-	
+	mixer.init()
+	mixer.music.load("wakemeup.mp3")
+
 	if(message.payload == "SLEEP_ON"):
 		#play music
-		pygame.mixer.music.play(start = 36.0)
+		mixer.music.play(start = 36.0)
+		print("Music ON")
 
 	elif(message.payload == "SLEEP_OFF"):
 		#stop music afer 10 seconds
-		pygame.mixer.music.stop()
+		mixer.music.stop()
+		print("Music OFF")
 
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))

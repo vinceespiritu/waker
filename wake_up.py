@@ -10,12 +10,12 @@ def status_callback(client, userdata, message):
 	mixer.init()
 	mixer.music.load("wakemeup.mp3")
 
-	if(message.payload == "SLEEP_ON"):
+	if(str(message.payload, "utf-8") == "SLEEP_ON"):
 		#play music
 		mixer.music.play(start = 36.0)
 		print("Music ON")
 
-	elif(message.payload == "SLEEP_OFF"):
+	elif(str(message.payload, "utf-8") == "SLEEP_OFF"):
 		#stop music afer 10 seconds
 		mixer.music.stop()
 		print("Music OFF")

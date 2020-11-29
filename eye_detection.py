@@ -55,7 +55,7 @@ while(True):
         if (len(irises) < 2):
             # print(start)
             start += 1
-            if (start == 30):
+            if (start == 15):
                 client.publish("waker/sleep_status","SLEEP_ON")
                 pass
         else:

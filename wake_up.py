@@ -2,13 +2,13 @@ import paho.mqtt.client as mqtt
 from pygame import mixer
 import time
 
-audio_filename = "wakemeup.mp3"
+audio_filename = "Wake_Prank.mp3"
 
 # Wakeup function
 def status_callback(client, userdata, message):
 
 	mixer.init()
-	mixer.music.load("wakemeup.mp3")
+	mixer.music.load(audio_filename)
 
 	if(str(message.payload, "utf-8") == "SLEEP_ON"):
 		#play music

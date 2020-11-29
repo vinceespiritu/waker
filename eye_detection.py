@@ -1,7 +1,6 @@
 import numpy as np
 import cv2
 import paho.mqtt.client as mqtt
-from pynput import keyboard
 import time
 import datetime
 #import requests
